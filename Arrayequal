@@ -1,0 +1,25 @@
+public class ArrayEqual {
+	public static void main(String[] args) {
+		System.out.println("Enter the Array1 values");
+	       java.util.Scanner in= new java.util.Scanner(System.in);
+	       int array1=in.nextInt();
+	       int Arr1[]= new int [array1];
+	       System.out.println("Enter the Array2 values");
+	       java.util.Scanner in2= new java.util.Scanner(System.in);
+	       int array2=in2.nextInt();
+	       int Arr2[]= new int[array2];
+	       if( java.util.Arrays.equals(Arr1, Arr2))
+	       {
+	    	   System.out.println("equals"); 
+	       }
+	       else
+	       {
+	    	   System.out.println("not equals");
+	       }
+	       in.close();
+	       in2.close();
+	}
+}
+
+
+
