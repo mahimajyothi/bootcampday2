@@ -1,0 +1,154 @@
+class Scholar {
+	//Declaring Variables
+	private String name;
+	private String id;
+	private int physics;
+	private int chemistry;
+	private int mathamatics;
+	private int biology;
+	private int computer;
+	private double percentage;
+	private char grade;
+	
+	public Scholar(String name, String id, int physics, int chemistry, int mathamatics, int biology, int computer) {
+	super();    
+	//Assigning given inputs to the variables using this key words 
+	this.name = name;
+	this.id = id;
+	this.physics = physics;
+	this.chemistry = chemistry;
+	this.mathamatics = mathamatics;
+	this.biology = biology;
+	this.computer = computer;
+	int totalMarks = physics + chemistry + mathamatics + biology + computer;  // Adding total marks
+	this.percentage = (totalMarks / 5);  //calculating percentage
+	this.grade = grade(percentage);  // Calling percentage method
+	}
+		//  All the variables are in private so getter setter methods are used for setting the values and getting the values
+	public String getName() {
+	return name;
+	}
+
+	public void setName(String name) {
+	this.name = name;
+	}
+
+	public String getId() {
+	return id;
+	}
+
+	public void setId(String id) {
+	this.id = id;
+	}
+
+	public int getPhysics() {
+	return physics;
+	}
+
+	public void setPhysics(int physics) {
+	this.physics = physics;
+	}
+
+	public int getChemistry() {
+	return chemistry;
+	}
+
+	public void setChemistry(int chemistry) {
+	this.chemistry = chemistry;
+	}
+
+	public int getMathamatics() {
+	return mathamatics;
+	}
+
+	public void setMathamatics(int mathamatics) {
+	this.mathamatics = mathamatics;
+	}
+
+	public int getBiology() {
+	return biology;
+	}
+
+	public void setBiology(int biology) {
+	this.biology = biology;
+	}
+
+	public int getComputer() {
+	return computer;
+	}
+
+	public void setComputer(int computer) {
+	this.computer = computer;
+	}
+
+	public double getPercentage() {
+	return percentage;
+	}
+
+	public void setPercentage(double percentage) {
+	this.percentage = percentage;
+	}
+
+	public char getGrade() {
+	return grade;
+	}
+
+	public void setGrade(char grade) {
+	this.grade = grade;
+	}
+		// Overriding to string method without this method only object values will print
+	@Override
+	public String toString() {
+	return "Id : " + id + ",  name : " + name + ",  Grade : " + grade ;
+	}
+
+	private char grade(double percentage) 
+	{
+	if (percentage >= 90) 
+	{
+		return 'A';
+	}
+	if (percentage >= 80) 
+	{
+		return 'B';
+	}
+	if (percentage >= 70) 
+	{
+		return 'C';
+	}
+	if (percentage >= 60) 
+	{
+		return 'D';
+	}
+	if (percentage >= 40) 
+	{
+		return 'E';
+	} 
+	return 'F';
+	}
+}
+public class Grade 
+{
+	public static void main(String[] args) 
+	{
+		java.util.Scanner in = new java.util.Scanner(System.in);  // Scanner Class
+		System.out.println("Enter scholar name");  
+		String name = in.nextLine();  // Takes scholar name from console
+		System.out.println("Enter scholar id");
+		String id = in.nextLine();  // Takes scholar id from console 
+		System.out.println("Enter marks of 5 Subjects");
+		System.out.println("Enter maths marks of scholar");     
+		int maths = in.nextInt();  	 //Takes maths marks
+		System.out.println("Enter physics marks of scholar");
+		int physics = in.nextInt();  //Takes physics marks
+		System.out.println("Enter chemistry marks of scholar");
+		int chemistry = in.nextInt();  // takes chemistry marks
+		System.out.println("Enter biology marks of scholar");
+		int biology = in.nextInt();  // takes biology marks
+		System.out.println("Enter computer marks of scholar");
+		int computer = in.nextInt();  // takes computer marks
+		Scholar scholar = new Scholar(name, id, physics, chemistry, maths, biology, computer);  //passing given arguments to the constructor 
+		System.out.println("[  "+scholar.toString() +"  ]");  
+		in.close();
+	}
+}
